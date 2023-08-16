@@ -1,5 +1,44 @@
-#root {
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+/* @tailwind base;
+@tailwind components;
+@tailwind utilities;
+ */
+
+
+.nav-bar {
+  display: flex;
+  height: 65px;
+  background-image: linear-gradient(rgba(103, 34, 128, 1), rgba(166, 38, 211, 1));
+  padding: 22px;
+  color: white;
 }
+#logo {
+  height: 1005;
+}
+
+.main-header {
+  margin: auto 20px;
+}
+
+.side-header {
+  margin-left: auto;
+  align-items: flex-end;
+  font-weight: lighter;
+}
+
+@media only screen and (max-width: 600px) {
+  .nav-bar {
+    flex-direction: column;
+    align-items: center;
+    height: fit-content;
+    justify-content: center;
+  }
+
+  .side-header {
+    align-items: center;
+    margin: auto;
+  }
+
+}
+
+
+
