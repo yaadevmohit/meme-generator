@@ -8,6 +8,8 @@ main {
 }
 .nav-bar {
   display: flex;
+  align-content: center;
+  justify-content: center;
   height: 65px;
   background-image: linear-gradient(rgba(103, 34, 128, 1), rgba(166, 38, 211, 1));
   padding: 22px;
@@ -21,12 +23,6 @@ main {
   margin: auto 20px;
 }
 
-.side-header {
-  margin-left: auto;
-  align-items: flex-end;
-  font-weight: lighter;
-}
-
 .form {
   display: grid;
   grid-template: 40px 40px / 1fr 1fr;
@@ -38,6 +34,7 @@ main {
   border-radius: 5px;
   border: 1px solid #D5D4D8;
   text-indent: 5px;
+  font-weight: 500;
 }
 
 .form--button {
@@ -49,8 +46,13 @@ main {
   font-size: 16px;
   color: white;
   cursor: pointer;
+  font-weight: 700;
 }
 
+#meme-image {
+  max-width: 100%;
+  margin-top: 20px;
+}
 
 @media only screen and (max-width: 600px) {
   .nav-bar {
@@ -59,12 +61,6 @@ main {
     height: fit-content;
     justify-content: center;
   }
-
-  .side-header {
-    align-items: center;
-    margin: auto;
-  }
-
   .form {
     grid-template-columns: 1fr;
     grid-template-rows: repeat(3, 40px);
