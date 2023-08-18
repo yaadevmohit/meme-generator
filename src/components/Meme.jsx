@@ -1,13 +1,25 @@
 import React, { useState } from 'react'
 import memesData from '../memesData'
+
+
 function Meme() {
-  const [memeImage, setMemeImage] = useState("")
+
+  const [meme, setMeme] = useState({topText: "", bottomText: "", randomImage: "http://i.imgflip.com/1bij.jpg"})
+  const [allMemeImages, setAllMemeImages] = useState(memesData)
+  
   function getMemeImage(e) {
-    const memesArray = memesData.data.memes
     e.preventDefault()
-    const meme = memesArray[Math.floor(Math.random()*memesArray.length)];
-    setMemeImage(meme.url)
-  }  
+    const memesArray = allMemeImages.data.memes
+    const memeImage = memesArray[Math.floor(Math.random()*memesArray.length)];
+    setMeme(prevState => {
+      return {
+        ...prevState,
+        randomImage: memeImage.url 
+      }
+    })
+  }
+  
+  
   return (
     <main>
       <form className="form" action="">
@@ -27,7 +39,7 @@ function Meme() {
           Get a new meme image 🏞️
         </button>
       </form>
-      <img src={memeImage} id="meme-image" />
+      <img src={meme.randomImage} id="meme-image" />
     </main>
   )
 }
